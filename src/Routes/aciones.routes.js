@@ -8,7 +8,7 @@ const {
     listaDePost,
     unicoPost
 
-} =require('../Controllers/controllers')
+} =require('../controllers/controllers')
 
 
 router.get('/', listaDePost)

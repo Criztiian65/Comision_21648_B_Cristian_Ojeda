@@ -2,10 +2,10 @@ const {sequelize} = require ('../../database')
 const {DataTypes} = require ('sequelize')
 
 const postModel = sequelize.define('Posteos', {
-    TituloDelPost: DataTypes.STRING ,
-    Contenido: DataTypes.TEXT,
-    //imagen: ,
-    Fecha: DataTypes.DATE
+    titulo_del_post: DataTypes.STRING,
+    contenido: DataTypes.TEXT,
+    url: DataTypes.STRING,
+    
 })
 
 module.exports = {postModel};
