@@ -1,25 +1,54 @@
-const express = require('express')
+// const express = require('express')
+const postModel = require ('../Model/Post')
 
 
-function crearPost (req, res){ 
+async function crearPost (req, res){ 
+    // const {titulo_del_post, contenido, url}= req.body
+    // await postModel.create({
+    //     titulo_del_post,
+    //     contenido,
+    //     url
+    // })
+    // res.render('index')
     res.send('Creando Post')
-    res.end()
+    
 }
-function modificarPost (req, res){ 
-    res.send('Modificando Post')
-    res.end()
+async function modificarPost (req, res){ 
+    // const {titulo_del_post, contenido, url}= req.body
+    // const id = req.params.id
+    
+    // await postModel.update({titulo_del_post, contenido, url}, { 
+    //     where: {
+    //     id:id
+    // }}), 
+    res.send('Post modificado')
+       
 }
-function eliminarPost (req, res){ 
+async function eliminarPost (req, res){ 
+    // const {titulo_del_post, contenido, url}= req.body
+    // const id = req.params.id
+
+    // await postModel.destroy({
+    //     where: {
+    //         id:id
+    //     }
+    // })
     res.send('Eliminando Post')
-    res.end()
 }
-function listaDePost (req, res){ 
-    res.send('Todos los Post')
-    res.end()
+
+async function listaDePost (req, res){ 
+    const todosLosPost = await postModel.findAll()
+    res.render('index', {todosLosPost})
+    // res.send('Lista de post')
+    
 }
-function unicoPost (req, res){ 
-    res.send('Tu Post')
-    res.end()
+async function unicoPost (req, res){ 
+    // const id = req.params.id
+    
+    // // const Post = await postModel.findByPk(id)
+    // res.send('Tu Post' + Post)
+    
+    res.send('Unico post')
 }
 
 module.exports = {

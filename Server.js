@@ -2,26 +2,29 @@ const express = require ('express')
 const morgan = require('morgan')
 const cors = require ('cors')
 const { sequelize }  = require ('./database');
+const { postModel } = require('./src/Model/Post');
+require('./src/Model/Post')
+
 
 //middleware
 const app = express()
 app.use(cors())
 app.use(morgan('dev'))
-app.use(express.static('Public'))
-app.set('view engine', 'ejs')
+app.use(express.static('public'))
+app.set('views engine', 'ejs')
 
 //Routes
 
 
-app.set('view', __dirname + '/src/view')
-app.use('/posts', require('./src/Routes/aciones.routes'))
-app.use(require('./src/Routes/aciones.routes'))
+app.set('views', __dirname + '/src/views')
+app.use('/posts', require('./src/routes/aciones.routes'))
+app.use(require('./src/routes/aciones.routes'))
 
 
 //config sv
 app.listen(4000, ()=>{
     
-    sequelize.authenticate()
+    sequelize.sync({FORCE: false})
 
     console.log("Servidor arriba")
 })

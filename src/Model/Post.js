@@ -1,10 +1,10 @@
 const {sequelize} = require ('../../database')
 const {DataTypes} = require ('sequelize')
 
-const postModel = sequelize.define('Posteos', {
+const postModel = sequelize.sync('Posteos', {
     titulo_del_post: DataTypes.STRING,
     contenido: DataTypes.TEXT,
-    url: DataTypes.STRING,
+    url: DataTypes.TEXT
     
 })
 
