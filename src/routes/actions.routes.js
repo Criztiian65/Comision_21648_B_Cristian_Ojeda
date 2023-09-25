@@ -4,16 +4,13 @@ const router = Router()
 const {
     crearPost,
     modificarPost,
-    eliminarPost,
-    listaDePost,
-    unicoPost
+    eliminarPost
 
 } =require('../controllers/controllers')
 
 
-router.get('/', listaDePost)
-router.get('/:id', unicoPost)
-router.post('/', crearPost)
+
+router.post('/new-post', crearPost)
 router.delete('/:id', eliminarPost)
 router.put('/:id', modificarPost)
 

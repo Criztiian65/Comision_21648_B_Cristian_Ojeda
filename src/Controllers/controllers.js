@@ -2,14 +2,18 @@ const {postModel}  = require ('../Model/Post')
 
 
 async function crearPost(req, res) {
-    const { titulo_del_post, contenido, url } = req.body
+   
+     const { titulo_del_post, contenido, url } = req.body
     await postModel.create({
       titulo_del_post:titulo_del_post,
       contenido:contenido,
       url:url
     })
-    res.send('post creado')
-  }
+
+    res.redirect('/gets/all-posts')
+
+   }
+
 
   async function modificarPost (req, res){ 
     const id = req.params.id
@@ -27,18 +31,21 @@ async function crearPost(req, res) {
 async function eliminarPost (req, res){ 
     const id = req.params.id
 
-    await postModel.destroy({
-        where: {
-            id:id
-        }
-    })
-    res.send('Eliminando Post')
-}
+        await postModel.destroy({
+            where: {
+                id:id
+            }
+        })
+        res.send('Eliminado')
+    }  
+    
 
 async function listaDePost (req, res){ 
     const todosLosPost = await postModel.findAll()
-    res.json(todosLosPost)
-    // res.send('Lista de post')
+
+    console.log(postModel );
+
+    res.render('index',{todosLosPost})
     
 }
 
@@ -48,8 +55,14 @@ async function unicoPost (req, res){
     if (post==null) {
         return res.send ('No existe este post')
     }
+    res.render('index' )
+    // res.json("Este es tú post: " + post)
+}
 
-    res.json(post)
+function pagForm(req, res){
+
+    res.render('formulario_post')
+
 }
 
 module.exports = {
@@ -57,5 +70,6 @@ module.exports = {
     modificarPost,
     eliminarPost,
     listaDePost,
-    unicoPost
+    unicoPost,
+    pagForm
 }

@@ -1,0 +1,20 @@
+<h1>card</h1>
+<ul>
+    
+        <% todosLosPost.forEach ((todosLosPost) => { %>
+        <li>
+    
+          <div class="card text-bg-primary mt-2" style="width: 18rem;">
+            <div class="card-body ">
+                    <h5 class="card-title"><%= todosLosPost.titulo_del_post %></h5>
+                    <p class="card-text"><%= todosLosPost.contenido %></p>
+                    <p class="card-text">Url de la imagen: <%= todosLosPost.url %></p>
+                    <span> <%= todosLosPost.createdAt %> </span>
+                    <a href="" class="btn btn-danger">Eliminar Post</a>
+                                  
+                    <% }) %>
+                </div>  
+            </div>
+        </li>
+      
+</ul>
