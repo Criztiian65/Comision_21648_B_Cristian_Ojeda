@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include ('head')%>
+
+<body>  
+    <%- include ('navbar') -%>
+    <a href="/gets/all-posts" class="btn btn-danger">Volver al listado</a>
+    <h1>Modificar posteo</h1>
+    <form action="/actions/modificar" method="post">
+
+        <input type="text" name="id" value="<%= post.id %>" hidden>
+        <input type="text" name="titulo_del_post" placeholder="Titulo" value="<%= post.titulo_del_post%>"></br>
+        <textarea name="contenido" id="" cols="30" rows="10"><%=post.contenido %> </textarea></br>
+        <input type="text" name="url" placeholder="Url de la imagen" value="<%= post.url%>"></br></br>
+        <button class="btn btn-danger">Modificar</button>
+        <a class="btn btn-danger" href="/actions/borrar/:id">Borrar</a>
+
+    </form>
+
+    <%- include ('footer') -%>
+    
+    <scrip src="../../static/js/bootstraps.min.js"></script>
+</body>
+
+</html>

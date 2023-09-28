@@ -4,14 +4,14 @@ const router = Router()
 const {
     listaDePost,
     unicoPost,
-    crearPost,
-    pagForm
+    pagForm,
+    pag_modificacion
 
 } =require('../controllers/controllers')
 
-
-router.get('/pag_post', pagForm)
-router.get('/pag_post', crearPost)
+router.get('/', listaDePost)
+router.get('/pag-post', pagForm)
+router.get('/pag-modificacion/:id', pag_modificacion)
 router.get('/all-posts', listaDePost)
 router.get('/:id', unicoPost)
 

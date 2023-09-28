@@ -1,20 +1,18 @@
-<h1>card</h1>
-<ul>
-    
-        <% todosLosPost.forEach ((todosLosPost) => { %>
-        <li>
-    
-          <div class="card text-bg-primary mt-2" style="width: 18rem;">
-            <div class="card-body ">
-                    <h5 class="card-title"><%= todosLosPost.titulo_del_post %></h5>
-                    <p class="card-text"><%= todosLosPost.contenido %></p>
-                    <p class="card-text">Url de la imagen: <%= todosLosPost.url %></p>
-                    <span> <%= todosLosPost.createdAt %> </span>
-                    <a href="" class="btn btn-danger">Eliminar Post</a>
-                                  
-                    <% }) %>
-                </div>  
-            </div>
-        </li>
-      
-</ul>
+
+<% todosLosPost.forEach ((todosLosPost)=> { %>
+<div class="col-sm-4 col-xl-3   ">
+  <div class="card" style= "width: 18rem;" >
+    <div class="card-body">
+  
+      <h5 class="card-title">Titulo: <%= todosLosPost.titulo_del_post %></h5>
+      <p class="card-text"><%= todosLosPost.contenido %></p></br>
+      <p class="card-text">Url de la imagen: <%= todosLosPost.url %></p></br>
+      <p class="card-text"><%= todosLosPost.createdAt %></p>
+      <div class="row">
+        <a href="/actions/borrar/<%= todosLosPost.id  %>" class="btn btn-danger col-auto me-auto">Eliminar</a>
+      <a href="/gets/pag-modificacion/<%= todosLosPost.id  %>" class="btn btn-danger col-auto ms-auto">Modificar</a>
+      </div>
+    </div>
+  </div> 
+</div>
+  <% }) %>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include ('head')%>
+
+<body>  
+    <%- include ('navbar') -%>
+    <a href="/gets/all-posts">Volver al listado</a>
+    <h1>Crear posteos</h1>
+    <div class=" row justify-content-center   ">
+        <span class="col col-sm-3 bg-info border border-top-0">
+            <form class=" aling-items-center  " action="/actions/new-post" method="post">
+
+                <input type="text" name="titulo_del_post" placeholder="Titulo" > </br>
+    
+                <textarea name="contenido" id="" cols="30" rows="10"  placeholder="Contenido"> </textarea></br>
+    
+                <input type="text" name="url" placeholder="Url de la imagen"  >
+    
+                <button>Crear post</button>
+    
+            </form>
+        </span>
+    </div>
+    <%- include ('footer') -%>
+    
+    <scrip src="../../static/js/bootstraps.min.js"></script>
+</body>
+
+</html>
