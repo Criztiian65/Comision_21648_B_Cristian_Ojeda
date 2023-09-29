@@ -12,7 +12,7 @@ const {
 
 router.post('/new-post', crearPost)
 router.get('/borrar/:id', eliminarPost)
-router.post('/modificar/:id', modificarPost)
+router.post('/modificar', modificarPost)
 
 
 module.exports = router

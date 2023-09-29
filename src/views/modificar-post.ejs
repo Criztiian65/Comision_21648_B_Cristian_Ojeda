@@ -12,19 +12,20 @@
     </div>
     <div class="row justify-content-md-center m-2">
         <div class="col-md-8  ">
-            <form action="/actions/modificar/<%= post.id %> " method="post">
+            <form action="/actions/modificar" method="post">
         
                 <div class="col">
+                    <input type="text" name="id" value="<%= post.id %>" hidden>
                     <label for="exampleFormControlInput1" class="form-label text-white">Titulo:</label>
-                    <input name="titulo_del_post" class="form-control mb-3" type="text" placeholder="Titulo" id="exampleFormControlInput1" aria-label="default input example" value="<%= post.titulo_del_post%>" >
+                    <input name="titulo_del_post" class="form-control mb-3" type="text" placeholder="Titulo" aria-label="default input example" value="<%= post.titulo_del_post%>" >
                     
                     <div class="mb-3">
                       <label for="exampleFormControlTextarea1" class="form-label text-white">Contenido</label>
-                      <textarea name="contenido" class="form-control" id="exampleFormControlTextarea1" rows="3"><%=post.contenido %></textarea>
+                      <textarea name="contenido" class="form-control"  rows="3"><%=post.contenido %></textarea>
                     </div>
 
                     <label for="exampleFormControlInput2" class="form-label text-white ">Url de la imagen</label>
-                    <input name="url" type="url" class="form-control mb-3" id="exampleFormControlInput2" placeholder="Url de la imagen" value="<%= post.url%>" >
+                    <input name="url" type="url" class="form-control mb-3"  placeholder="Url de la imagen" value="<%= post.url %>" >
                     
                 </div>                  
                 <div class="row justify-content-evenly">
