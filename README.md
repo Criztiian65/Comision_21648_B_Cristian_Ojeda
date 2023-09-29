@@ -7,6 +7,8 @@ npm run dev (levantará el servidor, esta configurado para reiniciarlo por cada 
 
 El servidor esta abierto en el puerto 4000
 
+la pagina principal es http://localhost:4000/gets/all-posts
+
 ---------------------------------------------------
 
 Las dependencias utilizadas fueron:
