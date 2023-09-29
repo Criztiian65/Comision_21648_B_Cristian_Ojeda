@@ -1,17 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <%- include ('head')%>
-<body>
-    <div class="card text-bg-primary mt-2" style="width: 18rem;">
-        <div class="card-body ">
-                <h5 class="card-title"><%= post.titulo_del_post %></h5>
-                <p class="card-text"><%= post.contenido %></p>
-                <p class="card-text">Url de la imagen: <%= post.url %></p></br>
-                <span> <%= post.createdAt %> </span>
-                <a href="" class="btn btn-danger">Eliminar Post</a>
-                <a href="" class="btn btn-danger">Modificar Post</a>
-                
-            </div>  
+
+<body class="bg-dark">
+    <%- include ('navbar')%>
+
+    <div class="row">
+        <div class="col text-white m-2">
+            <b><h1>¡Aquí esta tu post!</h1></b>
         </div>
+    </div>
+    <a class="btn bg-success text-white m-2" href="/gets/all-posts">Volver al listado</a>
+
+    <div class="col m-2">   
+        <div class="card p-3"  >
+          <div class="card-body ">
+        
+            <p class="card-title">Titulo:</p>
+            <b><p class="card-title"><%= post.titulo_del_post %></p></b>
+      
+            <p class="card-text ">Contenido:</p>
+            <p class="card-text "><%= post.contenido %></p></br>
+            <a class="card-text text-center" href="<%= post.url %>" target="_blank">Ver imagen</a>
+            
+            <p class="card-text"><%= post.createdAt %></p>
+            
+            <div class="row row-cols-2">
+            <a href="/actions/borrar/<%= post.id  %>" class="btn btn-danger col-md-auto m-2 me-md-auto">Eliminar</a>
+            <a href="/gets/pag-modificacion/<%= post.id  %>" class="btn btn-danger col-md-auto m-2 ms-md-auto">Modificar</a>
+            </div>
+          </div>
+        </div> 
+      </div>
+
+        <%- include ('footer')%>
+
+<script type="module" src="../../static/js/bootstraps.min.js"></script>
 </body>
 </html>

@@ -62,7 +62,7 @@ async function unicoPost (req, res){
         return res.send ('No existe este post')
     }
     res.render('un-post', { post } )
-    // res.json("Este es tú post: " + post)
+    
 }
 
 function pagForm(req, res){

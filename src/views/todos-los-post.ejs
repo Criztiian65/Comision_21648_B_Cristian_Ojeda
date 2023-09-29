@@ -3,16 +3,21 @@
 
 <%- include ('head')-%>
 
-<body>  
+<body class="bg-dark">  
     <%- include ('navbar') -%>
 
-    <a class="btn btn-warning" href="/gets/pag-post"> crear</a>
+    <a class="btn btn-success m-2" href="/gets/pag-post"> Crea tu post</a>
+    <div class="row">
+        <div class="col mt-3 text-center text-white">
+            <h1>Aquí encontraras todos tus post</h1>
+        </div>
+    </div>
 
     <%- include('main')-%>
 
     <%- include ('footer') -%>
     
-    <scrip src="../../static/js/bootstraps.min.js"></script>
+    <script type="module" src="../../static/js/bootstraps.min.js"></script>
 </body>
 
 </html>

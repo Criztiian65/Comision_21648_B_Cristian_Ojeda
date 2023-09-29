@@ -13,7 +13,7 @@ router.get('/', listaDePost)
 router.get('/pag-post', pagForm)
 router.get('/pag-modificacion/:id', pag_modificacion)
 router.get('/all-posts', listaDePost)
-router.get('/:id', unicoPost)
+router.get('/post/:id', unicoPost)
 
 
 module.exports = router

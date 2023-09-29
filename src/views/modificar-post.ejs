@@ -2,24 +2,47 @@
 <html lang="en">
 <%- include ('head')%>
 
-<body>  
+<body class="bg-dark">  
     <%- include ('navbar') -%>
-    <a href="/gets/all-posts" class="btn btn-danger">Volver al listado</a>
-    <h1>Modificar posteo</h1>
-    <form action="/actions/modificar" method="post">
+    <a href="/gets/all-posts" class="btn btn-danger m-2">Volver al listado</a>
+    <div class="row">
+        <div class="col text-white ms-4">
+            <h1>Modificar posteo</h1>
+        </div>
+    </div>
+    <div class="row justify-content-md-center m-2">
+        <div class="col-md-8  ">
+            <form action="/actions/modificar/<%= post.id %> " method="post">
+        
+                <div class="col">
+                    <label for="exampleFormControlInput1" class="form-label text-white">Titulo:</label>
+                    <input name="titulo_del_post" class="form-control mb-3" type="text" placeholder="Titulo" id="exampleFormControlInput1" aria-label="default input example" value="<%= post.titulo_del_post%>" >
+                    
+                    <div class="mb-3">
+                      <label for="exampleFormControlTextarea1" class="form-label text-white">Contenido</label>
+                      <textarea name="contenido" class="form-control" id="exampleFormControlTextarea1" rows="3"><%=post.contenido %></textarea>
+                    </div>
 
-        <input type="text" name="id" value="<%= post.id %>" hidden>
-        <input type="text" name="titulo_del_post" placeholder="Titulo" value="<%= post.titulo_del_post%>"></br>
-        <textarea name="contenido" id="" cols="30" rows="10"><%=post.contenido %> </textarea></br>
-        <input type="text" name="url" placeholder="Url de la imagen" value="<%= post.url%>"></br></br>
-        <button class="btn btn-danger">Modificar</button>
-        <a class="btn btn-danger" href="/actions/borrar/:id">Borrar</a>
+                    <label for="exampleFormControlInput2" class="form-label text-white ">Url de la imagen</label>
+                    <input name="url" type="url" class="form-control mb-3" id="exampleFormControlInput2" placeholder="Url de la imagen" value="<%= post.url%>" >
+                    
+                </div>                  
+                <div class="row justify-content-evenly">
 
-    </form>
+                    <a class="btn btn-danger col-md-auto m-2" href="/actions/borrar/<%= post.id %> ">Borrar</a>
+                    <button class="btn btn-danger col-md-auto m-2 " >Guardar cambios</button>
+        
+                </div>
+                
+            </form>
+        </div>
+    </div>
+
+
 
     <%- include ('footer') -%>
     
-    <scrip src="../../static/js/bootstraps.min.js"></script>
+    <script type="module" src="../../static/js/bootstraps.min.js"></script>
 </body>
 
 </html>
